@@ -1,0 +1,18 @@
+@startuml FlyWeight
+
+title Flyweight
+hide members
+left to right direction
+
+class Personagem
+class Aparencia
+class AparenciaFactory
+class Jogo
+
+Personagem --> "1" Aparencia
+Jogo --> "0..*" Personagem
+Jogo ..> Aparencia
+Jogo ..> AparenciaFactory
+AparenciaFactory --> "0..*" Aparencia : Map(String,Aparencia)
+
+@enduml
